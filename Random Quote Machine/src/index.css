@@ -1,0 +1,59 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  transition: background 500ms;
+}
+.quote-box {
+  max-width: 50vw;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 8px;
+}
+.quote-author {
+  display: flex;
+  justify-content: end;
+}
+.quote-left {
+  margin-right: 10px;
+}
+.social-links {
+  flex-grow: 2;
+}
+.options {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+button {
+  flex-grow: 1;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 100ms;
+  outline: none;
+  font-size: 20px;
+  font-weight: bolder;
+}
+button:hover {
+  opacity: 0.9;
+}
