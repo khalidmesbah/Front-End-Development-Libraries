@@ -59,7 +59,9 @@ const App = () => {
         />
         {quote?.text || defaultText}
       </h1>
-      <h4 id="author">- {quote?.author || defaultAuthor}</h4>
+      <h4 id="author" className="quote-author">
+        - {quote?.author || defaultAuthor}
+      </h4>
       <div className="options">
         <div className="social-links">
           <a
