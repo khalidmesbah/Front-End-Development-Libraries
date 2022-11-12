@@ -17,18 +17,18 @@ function App() {
   const [render, setRender] = useState(false);
   const [sessionTime, setSessionTime] = useState({
     hours: 0,
-    minutes: 0,
-    seconds: 5,
+    minutes: 25,
+    seconds: 0,
   });
   const [shortBreakTime, setShortBreakTime] = useState({
     hours: 0,
-    minutes: 0,
-    seconds: 3,
+    minutes: 5,
+    seconds: 0,
   });
   const [longBreakTime, setLongBreakTime] = useState({
     hours: 0,
-    minutes: 0,
-    seconds: 4,
+    minutes: 15,
+    seconds: 0,
   });
   const [maxNumOfSession, setMaxNumOfSessions] = useState(2);
   const [hours, setHours] = useState(sessionTime.hours);
