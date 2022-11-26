@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const heaterKit = [
   {
@@ -119,11 +119,13 @@ function App() {
   const [current, setCurrent] = useState("");
   const [volume, setVolume] = useState(0.5);
 
-  const activateKeyboard = ({ key }: KeyboardEvent) => {
-    key = key.toUpperCase();
-    const availableKeys = drumPads.map((drumPad) => drumPad.key);
-    if (availableKeys.includes(key)) playSound(key);
-  };
+  const activateKeyboard = useMemo(() => {
+    return ({ key }: KeyboardEvent) => {
+      key = key.toUpperCase();
+      const availableKeys = drumPads.map((drumPad) => drumPad.key);
+      if (availableKeys.includes(key)) playSound(key);
+    };
+  }, [drumPads]);
 
   const playSound = (idSelector: string) => {
     if (!power) return;
@@ -140,7 +142,7 @@ function App() {
     return () => {
       document.removeEventListener("keydown", activateKeyboard);
     };
-  }, [power, volume, drumPads]);
+  }, [power, volume, activateKeyboard]);
 
   return (
     <div id="drum-machine">
